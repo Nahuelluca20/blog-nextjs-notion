@@ -3,8 +3,10 @@ import Link from "next/link";
 import {usePathname} from "next/navigation";
 
 function LinkComponent({text, href, pathname}: {text: string; href: string; pathname: string}) {
+  const isActive = pathname === href || (pathname.startsWith(href) && href !== "/");
+
   return (
-    <Link className={`link ${pathname === href ? "text-blue-400" : ""}`} href={href}>
+    <Link className={`link ${isActive ? "text-blue-400" : ""}`} href={href}>
       {text}
     </Link>
   );
@@ -12,13 +14,20 @@ function LinkComponent({text, href, pathname}: {text: string; href: string; path
 
 export default function Navbar() {
   const pathname = usePathname();
+  const routes = [
+    {text: "Home", href: "/"},
+    {text: "Blog", href: "/blog"},
+    {text: "Contact", href: "/contact"},
+  ];
 
   return (
-    <nav className="py-10">
-      <ul className="flex gap-8 justify-center font-normal text-xl">
-        <LinkComponent href="/" pathname={pathname} text="Home" />
-        <LinkComponent href="/blog" pathname={pathname} text="Blog" />
-        <LinkComponent href="/contact" pathname={pathname} text="Contact" />
+    <nav className="py-10 mb-20">
+      <ul className="flex gap-12 justify-center font-medium text-xl">
+        {routes.map((route) => (
+          <li key={route.href}>
+            <LinkComponent href={route.href} pathname={pathname} text={route.text} />
+          </li>
+        ))}
       </ul>
     </nav>
   );

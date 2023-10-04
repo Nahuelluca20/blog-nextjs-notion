@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className="mx-auto mt-20 text-center grid justify-center">
+    <div className="">
       <div className="">
         <h2 className="font-bold max-w-[530px] mb-4 text-3xl md:text-5xl">
           Blog with NextJS + Notion

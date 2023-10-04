@@ -9,9 +9,11 @@ export default function BlogPreviewCard({title, content}: {title: string; conten
         <div className="flex-col flex-none flex h-20 w-20 items-center justify-center bg-blue-400 rounded-full">
           <Image alt="blog" height={32} src={ExampleImg} width={32} />
         </div>
-        <div className="flex-col flex items-start gap-2.5">
+        <div className="flex-col flex items-start text-start gap-2.5">
           <h5 className="font-bold text-base md:text-xl">{title}</h5>
-          <p className="text-[#636262] text-start">{content}</p>
+          <p className="text-[#636262] max-w-[420px] max-h-[48px] overflow-hidden">
+            <span className="text-clip">{content}</span>
+          </p>
         </div>
       </div>
     </div>

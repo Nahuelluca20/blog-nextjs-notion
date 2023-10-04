@@ -18,16 +18,16 @@ export default function page() {
   ];
 
   return (
-    <section className="cursor-pointer">
+    <section>
       <div className="mx-auto grid justify-center w-full">
         <div className="mx-auto">
           <h2 className="max-w-[530px] font-bold text-3xl md:text-5xl mb-8 md:mb-12 lg:mb-4 pb-16">
             Posts on the blog
           </h2>
         </div>
-        <div className="grid gap-5">
+        <div className="grid gap-5 px-3 md:px-0">
           {blogData.map((blog) => (
-            <Link key={blog.id} href={`/blog/${blog.id}`}>
+            <Link key={blog.id} className="cursor-pointer" href={`/blog/${blog.id}`}>
               <BlogPreviewCard content={blog.content} title={blog.title} />
             </Link>
           ))}

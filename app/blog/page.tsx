@@ -5,7 +5,7 @@ import BlogPreviewCard from "@/components/blog-preview-card";
 export default function page() {
   const blogData = [
     {
-      id: "14213213",
+      id: "blog-1",
       title: "How to use Notion as a CMS for your NextJS blog",
       content: "Learn how to use Notion as a CMS for your NextJS blog",
     },

@@ -1,21 +1,10 @@
 import Link from "next/link";
 
 import BlogPreviewCard from "@/components/blog-preview-card";
+import {getPages} from "@/utils/notion";
 
-export default function page() {
-  const blogData = [
-    {
-      id: "blog-1",
-      title: "How to use Notion as a CMS for your NextJS blog",
-      content: "Learn how to use Notion as a CMS for your NextJS blog",
-    },
-    {
-      id: "346546",
-      title: "How to use Notion as a CMS for your NextJS blog",
-      content:
-        "Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam, purus sit amet dolor sit amet consectetur adipiscing",
-    },
-  ];
+export default async function page() {
+  const pagesBlog = await getPages();
 
   return (
     <section>
@@ -26,11 +15,19 @@ export default function page() {
           </h2>
         </div>
         <div className="grid gap-5 px-3 md:px-0">
-          {blogData.map((blog) => (
-            <Link key={blog.id} className="cursor-pointer" href={`/blog/${blog.id}`}>
-              <BlogPreviewCard content={blog.content} title={blog.title} />
-            </Link>
-          ))}
+          {pagesBlog &&
+            pagesBlog.results?.map((blog: any) => (
+              <Link
+                key={blog.properties.Slug.rich_text[0].plain_text}
+                className="cursor-pointer"
+                href={`/blog/${blog.properties.Slug.rich_text[0].plain_text}`}
+              >
+                <BlogPreviewCard
+                  content={blog.properties.Description.rich_text[0].plain_text ?? ""}
+                  title={blog.properties.Title.title[0]?.plain_text ?? ""}
+                />
+              </Link>
+            ))}
         </div>
       </div>
     </section>

@@ -24,7 +24,7 @@ export default function Navbar() {
     <nav className="py-10 mb-20">
       <ul className="flex gap-12 justify-center font-medium text-xl">
         {routes.map((route) => (
-          <li key={route.href}>
+          <li key={route.href} className="list-none">
             <LinkComponent href={route.href} pathname={pathname} text={route.text} />
           </li>
         ))}

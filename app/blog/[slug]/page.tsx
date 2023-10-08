@@ -1,14 +1,13 @@
-import { getPageContent, getPageBySlug, notionClient } from "@/utils/notion";
-import { NotionRenderer } from "@notion-render/client";
-import { notFound } from "next/navigation";
-
+import {NotionRenderer} from "@notion-render/client";
+import {notFound} from "next/navigation";
 //Plugins
 import hljsPlugin from "@notion-render/hljs-plugin";
 import bookmarkPlugin from "@notion-render/bookmark-plugin";
+
+import {getPageContent, getPageBySlug, notionClient} from "@/utils/notion";
 import Post from "@/components/post";
 
 export default async function page({params}: {params: {slug: string}}) {
-
   const post = await getPageBySlug(params.slug);
 
   //Redirect to not found page!
@@ -25,10 +24,10 @@ export default async function page({params}: {params: {slug: string}}) {
   const html = await notionRenderer.render(...content);
 
   return (
-      <Post
-        bannerImage={(post.properties.BannerImage as any).url}
-        content={html}
-        title={(post.properties.Title as any).title[0].plain_text}
-      />
+    <Post
+      bannerImage={(post.properties.BannerImage as any).url}
+      content={html}
+      title={(post.properties.Title as any).title[0].plain_text}
+    />
   );
 }

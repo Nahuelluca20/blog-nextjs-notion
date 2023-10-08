@@ -22,10 +22,8 @@ export default function Post({
       <Image alt="banner" className="w-[800px]! mt-10" height={500} src={bannerImage} width={800} />
       <div
         dangerouslySetInnerHTML={{__html: content}}
-        className="text-xl mt-4 max-w-3xl leading-10 prose prose-p:text-white prose-headings:text-white"
-      >
-        {/* {content} */}
-      </div>
+        className="text-xl mt-4 w-full max-w-[300px] md:max-w-[600px] lg:max-w-3xl leading-10 prose prose-p:text-white prose-headings:text-white"
+      />
     </article>
   );
 }

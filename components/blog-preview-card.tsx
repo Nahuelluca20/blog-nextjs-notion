@@ -4,8 +4,8 @@ import ExampleImg from "@/assets/example.svg";
 
 export default function BlogPreviewCard({title, content}: {title: string; content: string}) {
   return (
-    <div className="mx-auto  grid-cols-1 grid max-w-2xl gap-6">
-      <div className="flex-row flex items-center gap-6 border border-solid border-[#ada790] px-6 py-4 transition hover:bg-blue-100 max-[767px]:mx-auto max-[767px]:max-w-[480px] rounded-2xl sm:rounded-full">
+    <div className="mx-auto grid-cols-1 grid max-w-2xl gap-6">
+      <div className="flex-row w-full flex items-center gap-6 border border-solid border-[#ada790] px-6 py-4 transition hover:bg-blue-100 max-[767px]:mx-auto max-[767px]:max-w-[480px] rounded-2xl sm:rounded-full">
         <div className="flex-col flex-none flex h-20 w-20 items-center justify-center bg-blue-400 rounded-full">
           <Image alt="blog" height={32} src={ExampleImg} width={32} />
         </div>

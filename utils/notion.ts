@@ -4,8 +4,6 @@ import {Client} from "@notionhq/client";
 import {BlockObjectResponse, PageObjectResponse} from "@notionhq/client/build/src/api-endpoints";
 import {cache} from "react";
 
-export const revalidate = 60;
-
 export const notionClient = new Client({
   auth: process.env.NOTION_TOKEN,
 });

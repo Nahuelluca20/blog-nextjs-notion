@@ -3,6 +3,8 @@ import Link from "next/link";
 import BlogPreviewCard from "@/components/blog-preview-card";
 import {getPages} from "@/utils/notion";
 
+export const dynamic = "force-dynamic";
+
 export default async function page() {
   const pagesBlog = await getPages();
 

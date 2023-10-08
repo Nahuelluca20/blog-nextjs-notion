@@ -16,7 +16,7 @@ export default async function page() {
             Posts on the blog
           </h2>
         </div>
-        <div className="grid gap-5 px-3 md:px-0">
+        <div className="grid gap-5 px-3 md:px-0 pb-10">
           {pagesBlog &&
             pagesBlog.results?.map((blog: any) => (
               <Link

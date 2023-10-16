@@ -4,10 +4,7 @@ export default function page() {
   return (
     <div className="grid justify-center">
       <h1 className="font-bold text-3xl md:text-5xl">Contact</h1>
-      <Link
-        className="text-black mt-5 flex items-center gap-2"
-        href={"https://github.com/nahuelluca20"}
-      >
+      <Link className=" mt-5 flex items-center gap-2" href={"https://github.com/nahuelluca20"}>
         Nahuel FrontEnd Dev
         <span>-</span>
         <svg

@@ -1,9 +1,4 @@
 import Image from "next/image";
-import "@notion-render/client/sass/theme.scss";
-import "@notion-render/client/sass/_blocks.scss";
-import "@notion-render/client/sass/mixins/_colors.scss";
-import "@notion-render/client/sass/blocks/paragraph.scss";
-import "@notion-render/client/sass/variables/_colors.scss";
 
 export default function Post({
   title,
